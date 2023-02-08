@@ -37,7 +37,7 @@ export const create = async (req,res) =>{
 
 export const update = async(req,res) =>{
     try{
-        const id = req.params.id;
+        const id = Number(req.params.id);
         const person = await prisma.persona.update({
             where:{id},
             data:req.body
